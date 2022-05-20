@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+    <style>
+        body {
+            background-image: url('{% static "main/1.jpg" %}');
+            background-repeat: no-repeat;
+        } 
+        .site_menu_container {
+            color: rgba(226, 165, 84, 0.712);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 780px;
+            font-size: 25px;
+            width: 400px;
+        }
+        #aboutus_url {
+            border: 2px solid;
+            border-radius: 3px;
+            margin-left: 50px;
+            color: rgba(19, 24, 22, 0.884);  
+            transition: all 1s;        
+        }
+        #contact_url {
+            border: 2px solid;
+            margin-left: 50px;
+            border-radius: 3px;
+            color: rgba(19, 24, 22, 0.884);  
+            transition: all 1s;        
+        }
+        #main_page_url {
+            border: 2px solid;
+            border-radius: 3px;
+            color: rgba(19, 24, 22, 0.884);
+            transition: all 1s;  
+        }
+        #company_full_description {
+            margin-left: 750px;
+            font-size: 35px;
+            width: 600px;
+            font-family: monospace;
+            color: rgb(58, 58, 58);
+        }
+        #contact_url:hover {
+            background-color: rgba(175, 136, 236, 0.815);         
+        }
+        #aboutus_url:hover {
+            background-color: rgba(175, 136, 236, 0.815);       
+        }
+        #main_page_url:hover {
+            background-color: rgba(92, 38, 179, 0.815);   
+        }
+    </style>
+{% endblock %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+    <div class='wrapper'>
+        <div class='site_menu_container'>
+            <a href="{% url 'index' %}" id='main_page_url'>Главная</a>
+            <a href="{% url 'about_us' %}" id='aboutus_url'>О нас</a>
+            <a href="{% url 'contact' %}" id='contact_url'>Контакты</a>
+        </div>
+        <h1 id='company_full_description'>**Тут полное описание компании</h1>
+    </div>
+{% endblock %}
